@@ -1,11 +1,57 @@
 import { NextResponse } from "next/server";
+import { randomUUID } from "node:crypto";
+import { getEmailAdapter, getStaffNotificationEmail } from "@/lib/notifications/adapter-factory";
 
-// STUB — AE-5 (package-docs/GAPS_AND_TASKS.md) is still open. This only logs
-// the submission server-side; it does not persist it or notify staff. Do NOT
-// treat this as production-ready lead capture until AE-5 wires a real
-// destination (e.g. staff notification, Atlas OS, or a mailer).
+interface ConsultationRequestBody {
+  practiceName?: string;
+  contactName?: string;
+  email?: string;
+  phone?: string;
+  message?: string;
+}
+
 export async function POST(request: Request) {
-  const body = await request.json();
-  console.warn("[consultation-request STUB — AE-5 not yet implemented] received:", body);
-  return NextResponse.json({ ok: true, stub: true });
+  const body = (await request.json()) as ConsultationRequestBody;
+
+  if (!body.practiceName || !body.contactName || !body.email) {
+    return NextResponse.json(
+      { ok: false, error: "practiceName, contactName, and email are required" },
+      { status: 400 }
+    );
+  }
+
+  const id = randomUUID();
+  const subject = `New consultation request — ${body.practiceName}`;
+  const bodyText = [
+    `Practice: ${body.practiceName}`,
+    `Contact: ${body.contactName}`,
+    `Email: ${body.email}`,
+    body.phone ? `Phone: ${body.phone}` : undefined,
+    body.message ? `\nMessage:\n${body.message}` : undefined
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  try {
+    const adapter = getEmailAdapter();
+    const staffEmail = getStaffNotificationEmail() ?? "unset-in-dev@example.com";
+
+    const result = await adapter.send({
+      id,
+      recipientEmail: staffEmail,
+      subject,
+      body: bodyText
+    });
+
+    if (!result.success) {
+      console.error(`[consultation-request] delivery failed id=${id} error=${result.error}`);
+      return NextResponse.json({ ok: false, error: "delivery_failed" }, { status: 502 });
+    }
+
+    return NextResponse.json({ ok: true, id });
+  } catch (err) {
+    const error = err instanceof Error ? err.message : "unknown";
+    console.error(`[consultation-request] config error id=${id} error=${error}`);
+    return NextResponse.json({ ok: false, error: "server_misconfigured" }, { status: 500 });
+  }
 }
