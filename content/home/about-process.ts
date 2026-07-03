@@ -4,5 +4,5 @@
 export const aboutProcess = {
   heading: "How we stay organized.",
   body:
-    "Every client engagement is managed through our proprietary Atlas OS platform. It helps our team track every document, application, and payer interaction so your enrollment stays organized from start to finish."
+    "Unlike credentialing handled through spreadsheets and email threads, every Atlas Enrollment client is managed inside Atlas OS — our proprietary platform for tracking documents, payer applications, deadlines, and enrollment progress. That means fewer things falling through the cracks, and a clearer picture of where your enrollment stands at every step."
 };

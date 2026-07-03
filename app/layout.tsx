@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://atlasenrollment.com"),
   title: "Chiropractic Credentialing & Insurance Enrollment | Atlas Enrollment",
   description:
     "Atlas Enrollment manages insurance credentialing and provider enrollment for chiropractic practices — from paperwork to payer follow-up. Schedule a consultation."

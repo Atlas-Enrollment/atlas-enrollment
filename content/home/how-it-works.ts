@@ -7,8 +7,7 @@ export const howItWorks = {
     },
     {
       title: "Upload your documents.",
-      description:
-        "Licenses, malpractice insurance, W-9, NPI, CAQH — collected once, organized for every application."
+      description: "Upload your credentialing documents once. We organize everything needed for each payer application."
     },
     {
       title: "We manage enrollment until completion.",

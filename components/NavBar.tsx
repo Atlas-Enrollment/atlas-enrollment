@@ -4,7 +4,7 @@ import { CtaButton } from "./CtaButton";
 
 export function NavBar() {
   return (
-    <header className="border-b border-slate-200">
+    <header className="border-b border-atlas-blue-100">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center">
           {/* Wordmark lockup already includes "Atlas Enrollment" text (952x260,
@@ -19,7 +19,7 @@ export function NavBar() {
           />
         </Link>
         <nav className="flex items-center gap-6">
-          <Link href="/contact" className="text-sm text-slate-600 hover:text-slate-900">
+          <Link href="/contact" className="text-sm text-slate-600 hover:text-atlas-blue-700">
             Contact
           </Link>
           <CtaButton label="Get Started" />

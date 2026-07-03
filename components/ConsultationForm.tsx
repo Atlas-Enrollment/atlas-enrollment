@@ -42,7 +42,7 @@ export function ConsultationForm() {
           id="practiceName"
           name="practiceName"
           required
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900"
+          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900 focus:border-atlas-blue-500 focus:outline-none focus:ring-1 focus:ring-atlas-blue-500"
         />
       </div>
       <div>
@@ -53,7 +53,7 @@ export function ConsultationForm() {
           id="contactName"
           name="contactName"
           required
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900"
+          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900 focus:border-atlas-blue-500 focus:outline-none focus:ring-1 focus:ring-atlas-blue-500"
         />
       </div>
       <div>
@@ -65,7 +65,7 @@ export function ConsultationForm() {
           name="email"
           type="email"
           required
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900"
+          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900 focus:border-atlas-blue-500 focus:outline-none focus:ring-1 focus:ring-atlas-blue-500"
         />
       </div>
       <div>
@@ -76,7 +76,7 @@ export function ConsultationForm() {
           id="phone"
           name="phone"
           type="tel"
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900"
+          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900 focus:border-atlas-blue-500 focus:outline-none focus:ring-1 focus:ring-atlas-blue-500"
         />
       </div>
       <div>
@@ -87,13 +87,13 @@ export function ConsultationForm() {
           id="message"
           name="message"
           rows={4}
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900"
+          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-slate-900 focus:border-atlas-blue-500 focus:outline-none focus:ring-1 focus:ring-atlas-blue-500"
         />
       </div>
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded-md bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-700 disabled:opacity-50"
+        className="rounded-md bg-atlas-blue-900 px-6 py-3 text-sm font-semibold text-white hover:bg-atlas-blue-700 disabled:opacity-50"
       >
         {status === "submitting" ? "Sending…" : "Request Consultation"}
       </button>

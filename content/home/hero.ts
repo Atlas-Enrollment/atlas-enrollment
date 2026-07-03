@@ -1,7 +1,13 @@
 export const hero = {
-  headline: "Insurance Credentialing & Provider Enrollment for Chiropractic Practices",
+  headline: "Stop Chasing Insurance Companies. Start Seeing Patients.",
   subheadline:
-    "We handle the paperwork, payer enrollment, and follow-up so you can focus on caring for patients — not chasing insurance companies.",
+    "We handle insurance credentialing and provider enrollment for chiropractic practices — the paperwork, the payer follow-up, all of it.",
   primaryCta: "Schedule a Consultation",
-  secondaryCta: "See How It Works"
+  secondaryCta: "See How It Works",
+  // Verifiable specialization strip, not an unverified "trusted by" claim —
+  // derived from the actual payer categories in insurance-networks.ts.
+  credibilityStrip: {
+    label: "Specialized in chiropractic provider enrollment.",
+    items: ["Commercial Insurance", "Medicare", "Michigan Medicaid", "Solo & Multi-Provider Practices"]
+  }
 };

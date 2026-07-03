@@ -8,8 +8,8 @@ export function WhyUs() {
         <ul className="mt-6 space-y-3">
           {whyUs.points.map((point) => (
             <li key={point} className="flex gap-3 text-slate-700">
-              <span aria-hidden className="text-slate-400">
-                —
+              <span aria-hidden className="font-semibold text-atlas-blue-600">
+                ✓
               </span>
               <span>{point}</span>
             </li>
