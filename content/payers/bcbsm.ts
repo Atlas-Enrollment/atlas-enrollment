@@ -51,6 +51,16 @@ export const bcbsm: PayerPageContent = {
     "If BCBSM requests more information or a portion of the application is rejected, we handle the resubmission rather than leaving it to stall.",
     "Every BCBSM application is tracked inside Atlas OS, our internal platform, so there's a clear record of where things stand without waiting on a status-check phone call."
   ],
+  whatWeNeedIntro: "To begin a BCBSM enrollment, we'll typically ask for:",
+  whatWeNeed: [
+    "Basic practice information",
+    "Provider information",
+    "Current license and malpractice insurance",
+    "W-9",
+    "NPI",
+    "CAQH access (if applicable)"
+  ],
+  whatWeNeedClosing: "Once we've collected your documentation, we handle the submission and payer follow-up.",
   relatedServices: [
     "Medicare provider enrollment",
     "Michigan Medicaid (CHAMPS) credentialing",
@@ -61,5 +71,5 @@ export const bcbsm: PayerPageContent = {
     "BCBSM is usually one of several payers a Michigan chiropractic practice needs to be in-network with, not the only one — most practices we work with are enrolling with BCBSM alongside Medicare, Michigan Medicaid, or other commercial payers at the same time. We manage all of it as one coordinated process rather than a series of separate, disconnected applications.",
   finalCtaHeading: "Ready to Get Credentialed with BCBSM?",
   finalCtaSubheading:
-    "Schedule a consultation to discuss your practice, your BCBSM enrollment status, and what else you need to be in-network with."
+    "Schedule a consultation to review your current BCBSM enrollment status, identify any missing documentation, and build an enrollment plan for your practice."
 };

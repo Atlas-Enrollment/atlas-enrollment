@@ -7,9 +7,31 @@ import { CtaButton } from "@/components/CtaButton";
 // (content/payers/bcbsm.ts) is the template this was built against; every
 // other payer page should render through this same component so structure,
 // voice, and CTA placement stay consistent across all of them.
+//
+// Service JSON-LD is generated here, once, so every payer page inherits
+// consistent structured data automatically — no per-page schema to
+// hand-maintain. Kept in sync with visible content by construction: it's
+// built directly from the same PayerPageContent fields the page renders.
+function payerServiceJsonLd(content: PayerPageContent) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: `${content.payerShortName} Credentialing & Provider Enrollment`,
+    name: `${content.payerShortName} Credentialing & Provider Enrollment`,
+    description: content.metaDescription,
+    provider: { "@type": "Organization", name: "Atlas Enrollment", url: "https://atlasenrollment.com" },
+    areaServed: "Michigan",
+    url: `https://atlasenrollment.com/${content.slug}`
+  };
+}
+
 export function PayerPage({ content }: { content: PayerPageContent }) {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(payerServiceJsonLd(content)) }}
+      />
       <section className="mx-auto max-w-3xl px-6 py-16 text-center">
         <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
           {content.payerShortName} Credentialing &amp; Provider Enrollment
@@ -116,6 +138,21 @@ export function PayerPage({ content }: { content: PayerPageContent }) {
             </Link>
             .
           </p>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 px-6 py-16">
+        <div className="mx-auto max-w-2xl">
+          <h2 className="text-2xl font-semibold text-slate-900">What We&apos;ll Need From You</h2>
+          <p className="mt-4 text-slate-700">{content.whatWeNeedIntro}</p>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+            {content.whatWeNeed.map((item) => (
+              <li key={item} className="rounded-md border border-slate-200 bg-white p-4 text-slate-700">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-slate-700">{content.whatWeNeedClosing}</p>
         </div>
       </section>
 

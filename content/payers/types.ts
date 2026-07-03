@@ -27,6 +27,14 @@ export interface PayerPageContent {
   delayReasons: string[];
   helpIntro: string;
   howAtlasHelps: string[];
+  /** Short, action-oriented — what we ask of the client to kick things off.
+      Distinct from typicalDocumentation (payer's general requirements,
+      hedged since they vary) — this is Atlas's own intake ask, stated
+      plainly since it's our process, not the payer's. Placed right before
+      the final CTA as a low-friction reassurance. */
+  whatWeNeedIntro: string;
+  whatWeNeed: string[];
+  whatWeNeedClosing: string;
   /** Plain text for now — becomes real links once the sibling pages exist. */
   relatedServices: string[];
   closingParagraph: string;
