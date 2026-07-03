@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 const variants = {
-  dark: "bg-slate-900 text-white hover:bg-slate-700",
-  light: "bg-white text-slate-900 hover:bg-slate-100"
+  dark: "bg-atlas-blue-900 text-white hover:bg-atlas-blue-700",
+  light: "bg-white text-atlas-blue-900 hover:bg-atlas-blue-50"
 };
 
 export function CtaButton({

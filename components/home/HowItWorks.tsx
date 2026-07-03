@@ -8,7 +8,7 @@ export function HowItWorks() {
         <ol className="mt-8 space-y-6">
           {howItWorks.steps.map((step, i) => (
             <li key={step.title} className="flex gap-4">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-900 text-sm font-semibold text-white">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-atlas-blue-900 text-sm font-semibold text-white">
                 {i + 1}
               </span>
               <div>

@@ -63,3 +63,5 @@ yarn-error.log*
 .cache/
 .turbo/
 .vercel/
+.vercel
+.env*
