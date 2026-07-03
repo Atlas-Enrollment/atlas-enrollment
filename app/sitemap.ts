@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: `${baseUrl}/`, lastModified, changeFrequency: "monthly", priority: 1 },
-    { url: `${baseUrl}/contact`, lastModified, changeFrequency: "yearly", priority: 0.8 }
+    { url: `${baseUrl}/contact`, lastModified, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${baseUrl}/bcbsm-credentialing`, lastModified, changeFrequency: "monthly", priority: 0.9 }
   ];
 }
