@@ -6,10 +6,11 @@
 // and the payer list actually changes.
 //
 // Every entry's logoSrc was visually verified against the real payer brand
-// before being added here — one asset in public/atlas_logos/ (BCBS.png) was
-// found to actually be the Anthem logo (a different, unrelated Blue Cross
-// Blue Shield licensee — not Michigan's) and is deliberately NOT used below.
-// BCBSM has no verified logo asset yet and renders as a text-only card.
+// before being added here — an earlier asset in public/atlas_logos/
+// (BCBS.png) was found to actually be the Anthem logo (a different,
+// unrelated Blue Cross Blue Shield licensee — not Michigan's) and was never
+// used. It has since been replaced with a verified correct asset (see BCBSM
+// entry below).
 //
 // `href` is set ONLY when a real payer landing page exists (SEO Phase 2 —
 // package-docs/reference/SEO_STRATEGY.md § Phase 2) — never link to a page
@@ -32,10 +33,8 @@ export const payerLogoCategories: PayerLogoCategory[] = [
     payers: [
       {
         name: "BCBSM",
-        // No verified logo asset — see file header. Do not add BCBS.png here;
-        // it's the Anthem logo, a different Blue Cross Blue Shield licensee.
-        // alt left empty since there's no image to describe.
-        alt: "",
+        alt: "Blue Cross Blue Shield of Michigan logo",
+        logoSrc: "/atlas_logos/Blue_Cross_Blue_Shield_of_Michigan_(BCBSM)_logo.png",
         href: "/bcbsm-credentialing"
       },
       { name: "Aetna", alt: "Aetna logo", logoSrc: "/atlas_logos/Aetna.png" },
@@ -62,9 +61,11 @@ export const payerLogoCategories: PayerLogoCategory[] = [
         alt: "Michigan Department of Health and Human Services logo",
         logoSrc: "/atlas_logos/MDHHS.png"
       },
-      // No verified logo asset for Meridian — text-only card, per "use logos
-      // only where the asset exists."
-      { name: "Meridian (managed Medicaid)", alt: "" },
+      {
+        name: "Meridian (managed Medicaid)",
+        alt: "Meridian logo",
+        logoSrc: "/atlas_logos/Meridian-RGB.png"
+      },
       { name: "Molina (managed Medicaid)", alt: "Molina Healthcare logo", logoSrc: "/atlas_logos/Molina.png" },
       { name: "McLaren (managed Medicaid)", alt: "McLaren Health Care logo", logoSrc: "/atlas_logos/McLaren.png" }
     ]
