@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import { ConsultationForm } from "@/components/ConsultationForm";
 
+const TITLE = "Schedule a Consultation | Atlas Enrollment";
+const DESCRIPTION = "Request a credentialing consultation for your chiropractic practice.";
+
 export const metadata: Metadata = {
-  title: "Schedule a Consultation | Atlas Enrollment",
-  description: "Request a credentialing consultation for your chiropractic practice."
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/contact" },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: "https://atlasenrollment.com/contact" },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION }
 };
 
 // Contact email is a placeholder pending real business contact info —

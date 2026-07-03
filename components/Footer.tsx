@@ -8,7 +8,7 @@ export function Footer() {
         <div className="flex items-center gap-3">
           <Image
             src="/atlas-enrollment-logo.png"
-            alt="Atlas Enrollment"
+            alt="Atlas Enrollment logo"
             width={32}
             height={32}
             className="rounded-sm"

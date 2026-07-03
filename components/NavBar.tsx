@@ -11,7 +11,7 @@ export function NavBar() {
               ~3.66:1) — don't duplicate the name as separate text here. */}
           <Image
             src="/atlas-enrollment-logo-nav-bar.png"
-            alt="Atlas Enrollment"
+            alt="Atlas Enrollment logo"
             width={952}
             height={260}
             className="h-8 w-auto"
