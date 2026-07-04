@@ -7,9 +7,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://atlasenrollment.com";
   const lastModified = new Date();
 
+  const payerPages = [
+    "bcbsm-credentialing",
+    "medicare-provider-enrollment",
+    "michigan-medicaid-champs",
+    "priority-health-credentialing",
+    "hap-provider-enrollment",
+    "aetna-provider-enrollment",
+    "optum-credentialing",
+    "humana-provider-enrollment"
+  ];
+
   return [
     { url: `${baseUrl}/`, lastModified, changeFrequency: "monthly", priority: 1 },
     { url: `${baseUrl}/contact`, lastModified, changeFrequency: "yearly", priority: 0.8 },
-    { url: `${baseUrl}/bcbsm-credentialing`, lastModified, changeFrequency: "monthly", priority: 0.9 }
+    ...payerPages.map((slug) => ({
+      url: `${baseUrl}/${slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.9
+    }))
   ];
 }

@@ -35,8 +35,11 @@ export interface PayerPageContent {
   whatWeNeedIntro: string;
   whatWeNeed: string[];
   whatWeNeedClosing: string;
-  /** Plain text for now — becomes real links once the sibling pages exist. */
-  relatedServices: string[];
+  /** href set only when the sibling page actually exists — never link to a
+      page that doesn't exist yet. Plain label-only entries (no href) are
+      valid for services with no dedicated page (e.g. "multi-provider
+      enrollment", "re-credentialing"). */
+  relatedServices: { label: string; href?: string }[];
   closingParagraph: string;
   finalCtaHeading: string;
   finalCtaSubheading: string;

@@ -62,10 +62,10 @@ export const bcbsm: PayerPageContent = {
   ],
   whatWeNeedClosing: "Once we've collected your documentation, we handle the submission and payer follow-up.",
   relatedServices: [
-    "Medicare provider enrollment",
-    "Michigan Medicaid (CHAMPS) credentialing",
-    "Multi-provider enrollment for group practices",
-    "Re-credentialing and maintenance after you're already in-network"
+    { label: "Medicare provider enrollment", href: "/medicare-provider-enrollment" },
+    { label: "Michigan Medicaid (CHAMPS) credentialing", href: "/michigan-medicaid-champs" },
+    { label: "Multi-provider enrollment for group practices" },
+    { label: "Re-credentialing and maintenance after you're already in-network" }
   ],
   closingParagraph:
     "BCBSM is usually one of several payers a Michigan chiropractic practice needs to be in-network with, not the only one — most practices we work with are enrolling with BCBSM alongside Medicare, Michigan Medicaid, or other commercial payers at the same time. We manage all of it as one coordinated process rather than a series of separate, disconnected applications.",

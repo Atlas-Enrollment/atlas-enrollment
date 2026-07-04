@@ -122,12 +122,16 @@ export function PayerPage({ content }: { content: PayerPageContent }) {
         <div className="mx-auto max-w-2xl">
           <h2 className="text-2xl font-semibold text-slate-900">Related Services</h2>
           <p className="mt-4 text-slate-700">{content.closingParagraph}</p>
-          {/* Plain text for now — becomes real links once the sibling payer
-              pages exist, per content/payers/types.ts's relatedServices doc. */}
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {content.relatedServices.map((item) => (
-              <li key={item} className="text-slate-700">
-                {item}
+              <li key={item.label} className="text-slate-700">
+                {item.href ? (
+                  <Link href={item.href} className="text-atlas-blue-700 hover:text-atlas-blue-900 underline">
+                    {item.label}
+                  </Link>
+                ) : (
+                  item.label
+                )}
               </li>
             ))}
           </ul>

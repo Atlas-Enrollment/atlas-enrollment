@@ -37,21 +37,42 @@ export const payerLogoCategories: PayerLogoCategory[] = [
         logoSrc: "/atlas_logos/Blue_Cross_Blue_Shield_of_Michigan_(BCBSM)_logo.png",
         href: "/bcbsm-credentialing"
       },
-      { name: "Aetna", alt: "Aetna logo", logoSrc: "/atlas_logos/Aetna.png" },
-      { name: "Optum", alt: "Optum logo", logoSrc: "/atlas_logos/Optum.png" },
+      { name: "Aetna", alt: "Aetna logo", logoSrc: "/atlas_logos/Aetna.png", href: "/aetna-provider-enrollment" },
+      { name: "Optum", alt: "Optum logo", logoSrc: "/atlas_logos/Optum.png", href: "/optum-credentialing" },
       {
         name: "UnitedHealthcare",
         alt: "UnitedHealthcare logo",
-        logoSrc: "/atlas_logos/UnitedHealthcare_(logo).svg"
+        logoSrc: "/atlas_logos/UnitedHealthcare_(logo).svg",
+        // Same page as Optum — one payer entry in the underlying data
+        // (content/home/insurance-networks.ts), split into two logo cards
+        // per the original design request, but there's only one landing page.
+        href: "/optum-credentialing"
       },
-      { name: "Humana", alt: "Humana logo", logoSrc: "/atlas_logos/Humana.png" },
-      { name: "HAP / ASR", alt: "Health Alliance Plan logo", logoSrc: "/atlas_logos/HAP.png" },
-      { name: "Priority Health", alt: "Priority Health logo", logoSrc: "/atlas_logos/PriorityHealth.png" }
+      { name: "Humana", alt: "Humana logo", logoSrc: "/atlas_logos/Humana.png", href: "/humana-provider-enrollment" },
+      {
+        name: "HAP / ASR",
+        alt: "Health Alliance Plan logo",
+        logoSrc: "/atlas_logos/HAP.png",
+        href: "/hap-provider-enrollment"
+      },
+      {
+        name: "Priority Health",
+        alt: "Priority Health logo",
+        logoSrc: "/atlas_logos/PriorityHealth.png",
+        href: "/priority-health-credentialing"
+      }
     ]
   },
   {
     label: "Medicare",
-    payers: [{ name: "Medicare WPS/GHA", alt: "Medicare logo", logoSrc: "/atlas_logos/Medicare.png" }]
+    payers: [
+      {
+        name: "Medicare WPS/GHA",
+        alt: "Medicare logo",
+        logoSrc: "/atlas_logos/Medicare.png",
+        href: "/medicare-provider-enrollment"
+      }
+    ]
   },
   {
     label: "Medicaid (Michigan)",
@@ -59,15 +80,29 @@ export const payerLogoCategories: PayerLogoCategory[] = [
       {
         name: "CHAMPS / Michigan Medicaid",
         alt: "Michigan Department of Health and Human Services logo",
-        logoSrc: "/atlas_logos/MDHHS.png"
+        logoSrc: "/atlas_logos/MDHHS.png",
+        href: "/michigan-medicaid-champs"
       },
       {
         name: "Meridian (managed Medicaid)",
         alt: "Meridian logo",
-        logoSrc: "/atlas_logos/Meridian-RGB.png"
+        logoSrc: "/atlas_logos/Meridian-RGB.png",
+        // Managed Medicaid plans are covered as part of the CHAMPS page,
+        // not a separate landing page each — see content/payers/michigan-medicaid.ts
+        href: "/michigan-medicaid-champs"
       },
-      { name: "Molina (managed Medicaid)", alt: "Molina Healthcare logo", logoSrc: "/atlas_logos/Molina.png" },
-      { name: "McLaren (managed Medicaid)", alt: "McLaren Health Care logo", logoSrc: "/atlas_logos/McLaren.png" }
+      {
+        name: "Molina (managed Medicaid)",
+        alt: "Molina Healthcare logo",
+        logoSrc: "/atlas_logos/Molina.png",
+        href: "/michigan-medicaid-champs"
+      },
+      {
+        name: "McLaren (managed Medicaid)",
+        alt: "McLaren Health Care logo",
+        logoSrc: "/atlas_logos/McLaren.png",
+        href: "/michigan-medicaid-champs"
+      }
     ]
   }
 ];
