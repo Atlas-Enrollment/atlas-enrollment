@@ -3,7 +3,7 @@
 Public marketing site for Atlas Enrollment — insurance credentialing and provider enrollment services for chiropractic practices.
 
 - **Site:** atlasenrollment.com
-- **Sibling product:** [Atlas OS](../atlas-os) — the internal operating system staff use to run the credentialing workflow (`os.atlasenrollment.com`). Atlas OS is deliberately not the focus of this site; see `package-docs/ATLAS_ENROLLMENT_OVERVIEW.md`.
+- **Sibling product:** [Atlas OS](../../products/atlas-os) — the internal operating system staff use to run the credentialing workflow (`os.atlasenrollment.com`). Atlas OS is deliberately not the focus of this site; see `package-docs/ATLAS_ENROLLMENT_OVERVIEW.md`.
 
 ## Docs
 

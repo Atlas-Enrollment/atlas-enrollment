@@ -1,4 +1,4 @@
-// Ported from products/atlas/atlas-os/lib/notifications/adapter-factory.ts
+// Ported from products/atlas-os/lib/notifications/adapter-factory.ts
 import { loadNotificationConfig } from "@/lib/env";
 import type { EmailDeliveryAdapter } from "./adapter";
 import { StubEmailAdapter } from "./stub-adapter";

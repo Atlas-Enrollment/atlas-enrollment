@@ -1,4 +1,4 @@
-// Ported from products/atlas/atlas-os/lib/notifications/adapters/stub-adapter.ts
+// Ported from products/atlas-os/lib/notifications/adapters/stub-adapter.ts
 import type { DeliveryResult, EmailDeliveryAdapter, EmailMessage } from "./adapter";
 
 export class StubEmailAdapter implements EmailDeliveryAdapter {

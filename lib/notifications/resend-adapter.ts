@@ -1,4 +1,4 @@
-// Ported from products/atlas/atlas-os/lib/notifications/adapters/resend-adapter.ts
+// Ported from products/atlas-os/lib/notifications/adapters/resend-adapter.ts
 // — same Resend REST call, same success/failure logging convention, adapted
 // from atlas-os's case-notification `Notification` shape to this module's
 // simpler `EmailMessage` shape (this site only ever sends one kind of email:

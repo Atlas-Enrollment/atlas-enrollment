@@ -1,4 +1,4 @@
-// Scoped-down version of products/atlas/atlas-os/lib/config/env.ts's
+// Scoped-down version of products/atlas-os/lib/config/env.ts's
 // NOTIFICATION_PROVIDER / RESEND_API_KEY / NOTIFICATION_FROM_EMAIL pattern —
 // this site only ever sends one kind of email (a new consultation request),
 // so a full zod schema is unnecessary; same validation intent, less ceremony.
