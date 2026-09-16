@@ -12,7 +12,7 @@ export const insuranceNetworks = {
   medicare: ["Medicare WPS/GHA"],
   medicaid: {
     label: "Medicaid (Michigan)",
-    plans: ["CHAMPS / Michigan Medicaid", "Meridian (managed Medicaid)", "Molina (managed Medicaid)", "McLaren (managed Medicaid)"]
+    plans: ["CHAMPS / Michigan Medicaid", "Meridian (managed Medicaid)", "Molina (managed Medicaid)", "McLaren (managed Medicaid)", "Blue Cross Complete of Michigan (managed Medicaid)"]
   },
   // Keep this honest — reflect actual current coverage, not aspirational
   // reach. See reference/CONTENT_STRATEGY.md.
