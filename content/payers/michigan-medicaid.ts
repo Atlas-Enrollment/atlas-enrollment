@@ -6,7 +6,7 @@ export const michiganMedicaid: PayerPageContent = {
   payerShortName: "Michigan Medicaid",
   metaTitle: "Michigan Medicaid (CHAMPS) Credentialing | Atlas Enrollment",
   metaDescription:
-    "Atlas Enrollment manages Michigan Medicaid (CHAMPS) provider enrollment and managed care plan credentialing (Meridian, Molina, McLaren) for chiropractic practices.",
+    "Michigan Medicaid (CHAMPS) enrollment and managed Medicaid credentialing — Meridian, Molina, McLaren, Blue Cross Complete — for chiropractic practices.",
   heroExplanation:
     "Michigan Medicaid enrollment for chiropractic providers runs through CHAMPS (the Community Health Automated Medicaid Processing System), administered by the Michigan Department of Health and Human Services (MDHHS). We manage the CHAMPS enrollment process — and the managed care plan enrollments that build on it — so your practice can accept Michigan Medicaid patients without navigating the state's systems alone.",
   whoThisIsForIntro:
@@ -15,11 +15,11 @@ export const michiganMedicaid: PayerPageContent = {
     "Chiropractors opening a new practice who plan to accept Michigan Medicaid patients",
     "Existing practices adding a provider who needs their own CHAMPS enrollment",
     "Practices changing ownership or tax ID, which generally requires a new CHAMPS enrollment rather than an update to the existing one",
-    "Practices looking to join Meridian, Molina, or McLaren's managed Medicaid networks, which typically requires active CHAMPS enrollment as a prerequisite"
+    "Practices looking to join Meridian, Molina, McLaren, or Blue Cross Complete's managed Medicaid networks, which typically requires active CHAMPS enrollment as a prerequisite"
   ],
   enrollmentProcess: [
     "CHAMPS is Michigan's state Medicaid provider enrollment system — it's separate from, and generally precedes, enrollment with any individual managed Medicaid plan.",
-    "A provider generally needs an active CHAMPS enrollment before enrolling with Michigan's managed Medicaid plans (Meridian, Molina, McLaren), since those plans typically verify state Medicaid enrollment as a condition of their own credentialing.",
+    "A provider generally needs an active CHAMPS enrollment before enrolling with Michigan's managed Medicaid plans (Meridian, Molina, McLaren, Blue Cross Complete), since those plans typically verify state Medicaid enrollment as a condition of their own credentialing.",
     "MDHHS sets CHAMPS review timelines, not Atlas Enrollment. What we control is making sure the CHAMPS application — and the managed care plan applications that follow it — are complete and consistent with each other.",
     "Once CHAMPS enrollment is active, we sequence the managed care plan applications so they aren't submitted before CHAMPS confirmation, which is a common and avoidable cause of rejection."
   ],
@@ -43,7 +43,7 @@ export const michiganMedicaid: PayerPageContent = {
     "This is where Atlas Enrollment's coordination matters most — CHAMPS and its managed care plans have to be sequenced correctly, not just submitted all at once:",
   howAtlasHelps: [
     "We prepare and submit your CHAMPS enrollment application at both the practice and provider level.",
-    "We sequence and submit managed care plan applications (Meridian, Molina, McLaren) once CHAMPS enrollment is confirmed active, rather than submitting everything simultaneously and risking a mismatch.",
+    "We sequence and submit managed care plan applications (Meridian, Molina, McLaren, Blue Cross Complete) once CHAMPS enrollment is confirmed active, rather than submitting everything simultaneously and risking a mismatch.",
     "We track status across CHAMPS and every managed care plan enrollment tied to it.",
     "If MDHHS or a managed care plan requests more information, we handle the response.",
     "Every Michigan Medicaid enrollment — CHAMPS and the managed care plans built on it — is tracked as one coordinated process inside Atlas OS."
@@ -54,7 +54,7 @@ export const michiganMedicaid: PayerPageContent = {
     "State chiropractic license",
     "Malpractice insurance",
     "Practice tax ID and banking information",
-    "Which managed Medicaid plans (Meridian, Molina, McLaren) you want to enroll with, if known"
+    "Which managed Medicaid plans (Meridian, Molina, McLaren, Blue Cross Complete) you want to enroll with, if known"
   ],
   whatWeNeedClosing:
     "Once we have this, we prepare your CHAMPS enrollment and sequence any managed care plan applications once CHAMPS is confirmed active.",

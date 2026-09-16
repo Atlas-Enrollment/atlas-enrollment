@@ -17,6 +17,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT_PATH = resolve(__dirname, "../content/home/insurance-networks.ts");
 const DEFAULT_SOURCE = resolve(__dirname, "../../../products/atlas-os/lib/constants/payors.ts");
+const LOGO_PATH = resolve(__dirname, "../content/home/payer-logos.ts");
 const SOURCE_PATH = process.argv[2] ? resolve(process.argv[2]) : DEFAULT_SOURCE;
 
 const STATE_NAMES = { MI: "Michigan" };
@@ -101,6 +102,53 @@ function main() {
   const data = buildInsuranceNetworks(payors, existingHeading, existingFootnote);
   writeFileSync(OUTPUT_PATH, render(data));
   console.log(`[sync-payors] Synced ${payors.length} payors from ${SOURCE_PATH} -> ${OUTPUT_PATH}`);
+
+  reportUnrenderedPayors(data);
+}
+
+// The file this script writes is no longer what the homepage renders: since
+// the text list became a logo grid, InsuranceNetworks.tsx reads its cards from
+// content/home/payer-logos.ts and takes only the heading and footnote from
+// here. payer-logos.ts is hand-curated (a logo asset has to be visually
+// verified against the real payer brand before it is added), so this script
+// cannot write it -- but it can refuse to let a payer be synced and silently
+// never reach the page, which is exactly what happened when Blue Cross
+// Complete of Michigan was added upstream.
+// A payer counts as rendered if the grid shows it under any of the names it
+// could reasonably carry there. Two mismatches are expected by design and must
+// not be reported as gaps: a "(managed Medicaid)" style qualifier this script
+// appends, and a slash-joined payer that the grid splits into one card each --
+// "Optum / UnitedHealthcare" is a single payor upstream but two cards here, as
+// that file's own comment explains.
+function isRendered(name, logoSource) {
+  const base = name.split(" (")[0].trim();
+  const candidates = [base, ...base.split("/").map((part) => part.trim())].filter(
+    (candidate) => candidate.length >= 3
+  );
+  return candidates.some((candidate) => logoSource.includes(candidate));
+}
+
+function reportUnrenderedPayors(data) {
+  let logoSource;
+  try {
+    logoSource = readFileSync(LOGO_PATH, "utf-8");
+  } catch {
+    console.warn(`[sync-payors] Could not read ${LOGO_PATH} -- skipping the render check.`);
+    return;
+  }
+
+  const listed = [...data.commercial, ...data.medicare, ...data.medicaidPlans];
+  const missing = listed.filter((name) => !isRendered(name, logoSource));
+
+  if (missing.length === 0) return;
+
+  console.warn(
+    `\n[sync-payors] ${missing.length} payer(s) synced but NOT rendered on the homepage:\n` +
+    missing.map((name) => `  - ${name}`).join("\n") +
+    `\n\nThe homepage grid is driven by ${LOGO_PATH}, which this script does not\n` +
+    `write. Add an entry there (omit logoSrc until a verified asset exists) or\n` +
+    `the payer will not appear on the site.\n`
+  );
 }
 
 main();
