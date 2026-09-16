@@ -102,6 +102,16 @@ export const payerLogoCategories: PayerLogoCategory[] = [
         alt: "McLaren Health Care logo",
         logoSrc: "/atlas_logos/McLaren.png",
         href: "/michigan-medicaid-champs"
+      },
+      {
+        name: "Blue Cross Complete of Michigan (managed Medicaid)",
+        alt: "Blue Cross Complete of Michigan",
+        // No logoSrc yet: public/atlas_logos/ has no Blue Cross Complete
+        // asset, and this plan is a separate entity from BCBSM above, so the
+        // BCBSM logo is NOT a stand-in for it. Per this file's header an
+        // asset is added only after it has been visually verified against the
+        // real payer brand -- the card renders name-only until then.
+        href: "/michigan-medicaid-champs"
       }
     ]
   }
