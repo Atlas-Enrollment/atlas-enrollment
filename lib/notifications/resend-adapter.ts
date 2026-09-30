@@ -20,7 +20,7 @@ export class ResendEmailAdapter implements EmailDeliveryAdapter {
   ) {}
 
   async send(message: EmailMessage): Promise<DeliveryResult> {
-    if (!message.recipientEmail) {
+    if (message.recipientEmails.length === 0) {
       return { success: false, error: "no_recipient_email" };
     }
 
@@ -33,7 +33,7 @@ export class ResendEmailAdapter implements EmailDeliveryAdapter {
         },
         body: JSON.stringify({
           from: this.fromEmail,
-          to: [message.recipientEmail],
+          to: message.recipientEmails,
           subject: message.subject,
           text: message.body
         })
