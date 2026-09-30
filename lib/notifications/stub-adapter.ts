@@ -6,7 +6,7 @@ export class StubEmailAdapter implements EmailDeliveryAdapter {
     console.info(
       `[notification:stub] would send email\n` +
         `  id:      ${message.id}\n` +
-        `  to:      ${message.recipientEmail}\n` +
+        `  to:      ${message.recipientEmails.join(", ")}\n` +
         `  subject: ${message.subject}`
     );
 

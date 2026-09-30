@@ -19,6 +19,6 @@ export function getEmailAdapter(): EmailDeliveryAdapter {
   return cachedAdapter;
 }
 
-export function getStaffNotificationEmail(): string | undefined {
-  return loadNotificationConfig().staffEmail;
+export function getStaffNotificationEmails(): string[] {
+  return loadNotificationConfig().staffEmails;
 }

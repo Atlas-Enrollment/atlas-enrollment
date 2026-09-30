@@ -1,6 +1,6 @@
 export interface EmailMessage {
   id: string;
-  recipientEmail: string;
+  recipientEmails: string[];
   subject: string;
   body: string;
 }

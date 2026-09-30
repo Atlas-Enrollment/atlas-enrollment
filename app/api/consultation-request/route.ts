@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { randomUUID } from "node:crypto";
-import { getEmailAdapter, getStaffNotificationEmail } from "@/lib/notifications/adapter-factory";
+import { getEmailAdapter, getStaffNotificationEmails } from "@/lib/notifications/adapter-factory";
 
 interface ConsultationRequestBody {
   practiceName?: string;
@@ -34,11 +34,11 @@ export async function POST(request: Request) {
 
   try {
     const adapter = getEmailAdapter();
-    const staffEmail = getStaffNotificationEmail() ?? "unset-in-dev@example.com";
+    const staffEmails = getStaffNotificationEmails();
 
     const result = await adapter.send({
       id,
-      recipientEmail: staffEmail,
+      recipientEmails: staffEmails.length > 0 ? staffEmails : ["unset-in-dev@example.com"],
       subject,
       body: bodyText
     });
